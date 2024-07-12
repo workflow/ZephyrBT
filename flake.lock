@@ -183,16 +183,15 @@
         "zephyr": "zephyr"
       },
       "locked": {
-        "lastModified": 1718420479,
-        "narHash": "sha256-srKjvgU/J09Sb04n4xdlLOR1jj54MQkbzAhvF0PN+HI=",
-        "owner": "OSSystems",
+        "lastModified": 1720132542,
+        "narHash": "sha256-5o5qhBec7GABj/x3LPOVQn8W9iyyLTqH+FMLe454HOc=",
+        "owner": "adisbladis",
         "repo": "zephyr-nix",
-        "rev": "814004a467285a19d354464974d014249aee5098",
+        "rev": "6339867e76405b7e84270b908c2ab6deca5f6d8d",
         "type": "github"
       },
       "original": {
-        "owner": "OSSystems",
-        "ref": "pending",
+        "owner": "adisbladis",
         "repo": "zephyr-nix",
         "type": "github"
       }

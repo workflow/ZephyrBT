@@ -18,7 +18,7 @@
     };
 
     zephyr-nix = {
-      url = "github:OSSystems/zephyr-nix/pending";
+      url = "github:adisbladis/zephyr-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -73,8 +73,8 @@
               })
 
               (zephyr.pythonEnv.override {
-                extraLibs = [
-                  zephyr.pythonEnv.pkgs.stringcase
+                extraPackages = pkgs: [
+                  pkgs.stringcase
                 ];
               })
 
