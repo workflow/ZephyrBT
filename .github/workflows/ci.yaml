@@ -53,26 +53,26 @@ jobs:
 
             ./scripts/run-tests --clobber-output  --inline-logs -v -N -M
 
-      - name: Merge Test Results
-        if: steps.twister-tests.conclusion == 'failure'
-        run: |
-          pip3 install junitparser junit2html
-          junitparser merge **/twister.xml junit.xml
-          junit2html junit.xml junit.html
-
-      - name: Upload Unit Test Results in HTML
-        if: steps.twister-tests.conclusion == 'failure'
-        uses: actions/upload-artifact@v4
-        with:
-          name: HTML Unit Test Results
-          if-no-files-found: ignore
-          path: |
-            junit.html
-
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: steps.twister-tests.conclusion == 'failure'
-        with:
-          check_name: Unit Test Results
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          files: "**/twister.xml"
+      # - name: Merge Test Results
+      #   if: steps.twister-tests.conclusion == 'failure'
+      #   run: |
+      #     pip3 install junitparser junit2html
+      #     junitparser merge **/twister.xml junit.xml
+      #     junit2html junit.xml junit.html
+      #
+      # - name: Upload Unit Test Results in HTML
+      #   if: steps.twister-tests.conclusion == 'failure'
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: HTML Unit Test Results
+      #     if-no-files-found: ignore
+      #     path: |
+      #       junit.html
+      #
+      # - name: Publish Unit Test Results
+      #   uses: EnricoMi/publish-unit-test-result-action@v2
+      #   if: steps.twister-tests.conclusion == 'failure'
+      #   with:
+      #     check_name: Unit Test Results
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     files: "**/twister.xml"
